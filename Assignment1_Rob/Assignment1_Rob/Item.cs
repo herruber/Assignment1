@@ -12,7 +12,13 @@ namespace LINQShop
         public string Name { get; set; }
         public double Price { get; set; }
         public Category Cat{ get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + ID + " Name: " + Name + " Price: " + Price + " Category: " + Cat;
+        }
     }
+    
 
     
 }
