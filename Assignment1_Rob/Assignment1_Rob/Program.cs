@@ -178,10 +178,10 @@ namespace LINQShop
                     shandler.SearchByPriceOrNameInCat(low, high, s, cat);
 
 
-                    foreach (var item in returnedItems)
-                    {
-                        Console.WriteLine(item);
-                    }
+                    ////foreach (var item in returnedItems)
+                    ////{
+                    ////    Console.WriteLine(item);
+                    ////}
 
                     break;
                 default:
@@ -210,33 +210,7 @@ namespace LINQShop
             
             while (isRunning)
             {
-
-
-                char input = '-';
-
-                try
-                {
-                    Console.WriteLine("0: Exit\n1: Sort Menu");
-                    input = Console.ReadLine()[0];
-                }
-                catch (Exception e)
-                {
-
-                    Console.WriteLine("Input has to be a number" + e);
-                }
-
-                switch (input)
-                {
-                    case '0':
-                        isRunning = false;
-                        break;
-                    case '1':
-                        SortMenu();
-                        
-                        break;
-                    default:
-                        break;
-                }
+            SortMenu();
             }
         }
     }

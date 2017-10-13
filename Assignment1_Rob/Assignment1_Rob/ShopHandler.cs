@@ -43,6 +43,12 @@ namespace LINQShop
             foreach (var item in groups)
             {
                 Console.WriteLine(item.Key);
+
+                foreach (var k in item)
+                {
+                    Console.WriteLine(k.ToString());
+
+                }
             }
         }
 
@@ -78,15 +84,22 @@ namespace LINQShop
         {
             if (low > 0 || high > 0)
             {
-                var p = inventory.GetAllItems().OrderBy(e => e.Price > low && e.Price < high).GroupBy(e => e.Cat).ToList();
+                var p = inventory.GetAllItems().OrderBy(e => e.Price > low && e.Price < high).Where(e => e.Cat == cat).ToList();
+
+                foreach (var item in p)
+                {                   
+                        Console.WriteLine(item.ToString());
+
+                }
             }
             else
             {
-                var n = inventory.GetAllItems().OrderBy(e => e.Name.Contains(name)).GroupBy(e => e.Cat).ToList();
+                var n = inventory.GetAllItems().OrderBy(e => e.Name.Contains(name)).Where(e => e.Cat == cat).ToList();
 
                 foreach (var item in n)
                 {
-                    Console.WriteLine(item.Key);
+                        Console.WriteLine(item.ToString());
+
                 }
             }
 
